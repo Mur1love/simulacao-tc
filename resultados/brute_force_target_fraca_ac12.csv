@@ -1,0 +1,2 @@
+automaton,target_password,charset,min_length,max_length,attempts_until_crack,time_until_crack_seconds,velocity_attempts_per_second,alphabet_size,password_index_in_space,total_search_space,estimated_time_to_crack_total_seconds,viability_comment,is_viable
+fraca.jff,ac12,abcdefghijklmnopqrstuvwxyz0123456789,4,4,51581,0.0234,2208585.34,36,51581,1679616,N/A,Viável para teste,Sim
