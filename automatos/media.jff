@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<structure>
+    <type>fa</type>
+    <automaton>
+        <!-- length counting states -->
+        <state id="0" name="q0"><x>80.0</x><y>120.0</y><initial/></state>
+        <state id="1" name="q1"><x>180.0</x><y>120.0</y></state>
+        <state id="2" name="q2"><x>280.0</x><y>120.0</y></state>
+        <state id="3" name="q3"><x>380.0</x><y>120.0</y></state>
+        <state id="4" name="q4"><x>480.0</x><y>120.0</y></state>
+        <state id="5" name="q5"><x>580.0</x><y>120.0</y></state>
+        <state id="6" name="q6"><x>680.0</x><y>120.0</y></state>
+
+        <!-- post-length states represent which character classes have been seen
+             We'll include a small set of representative states for JFLAP visualization.
+             The Python loader will not rely on the JFLAP state graph to update markers;
+             it will compute requirement satisfaction dynamically. -->
+        <state id="10" name="q6_LUD"><x>680.0</x><y>240.0</y><final/></state>
+
+        <!-- transitions for length counting -->
+        <transition><from>0</from><to>1</to><read>[a-zA-Z0-9]</read></transition>
+        <transition><from>1</from><to>2</to><read>[a-zA-Z0-9]</read></transition>
+        <transition><from>2</from><to>3</to><read>[a-zA-Z0-9]</read></transition>
+        <transition><from>3</from><to>4</to><read>[a-zA-Z0-9]</read></transition>
+        <transition><from>4</from><to>5</to><read>[a-zA-Z0-9]</read></transition>
+        <transition><from>5</from><to>6</to><read>[a-zA-Z0-9]</read></transition>
+
+        <!-- from q6 to final illustrative state when all classes are present (visual aid) -->
+        <transition><from>6</from><to>10</to><read>[a-zA-Z0-9]</read></transition>
+
+        <!-- loop on q6 -->
+        <transition><from>6</from><to>6</to><read>[a-zA-Z0-9]</read></transition>
+    </automaton>
+</structure>
